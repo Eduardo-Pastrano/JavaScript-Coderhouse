@@ -1,1 +1,1 @@
-# Primer commit para proyecto JavaScript.
+# Primera entrega.
