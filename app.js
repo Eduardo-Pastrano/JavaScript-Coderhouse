@@ -24,9 +24,10 @@ switch (opciones) {
 
     case "2":
         const marcas = [
-            {nombre: 'Apple', stock: '15 telefonos en stock'},
-            {nombre: 'Samsung', stock: '25 telefonos en stock'},
-            {nombre: 'Xiaomi', stock: '20 telefonos en stock'}
+            {nombre: 'Apple', stock: '15 telefonos'},
+            {nombre: 'Samsung', stock: '25 telefonos'},
+            {nombre: 'Xiaomi', stock: '20 telefonos'},
+            {nombre: 'Motorola', stock: '10 telefonos'}
         ]
 
         const nombres = marcas.map((disponible) => {
