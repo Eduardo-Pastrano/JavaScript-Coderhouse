@@ -1,0 +1,28 @@
+.menu {
+    @include flex-column;
+    margin-top: 100px;
+
+    .mas-vendidos {
+        background-color: $fondo3;
+        width: 100%;
+
+        .box-mas-vendidos {
+            @include flex-column;
+
+            .lista-menu {
+                display: flex;
+                gap: 1em;
+            }
+        }
+    }
+
+    .menu-grilla {
+        margin: 25px;
+
+        .box-menu {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5em;
+        }
+    }
+}

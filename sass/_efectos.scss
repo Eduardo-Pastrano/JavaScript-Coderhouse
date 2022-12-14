@@ -1,0 +1,22 @@
+.boton-busqueda:hover {
+    background-color: $fondo2;
+}
+
+.boton-form:hover {
+    background-color: $fondo2;
+}
+
+nav 
+    li:hover {
+        background-color: $fondo2;
+}
+
+// Esto al ser de bootstrap no me permitia cambiar nada
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(0 0 0 / 100%);
+}
+// Esto al ser de bootstrap no me permitia cambiar nada
+
+a:visited {
+    color:black;
+}

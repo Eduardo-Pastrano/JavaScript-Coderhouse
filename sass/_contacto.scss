@@ -1,0 +1,62 @@
+.contacto {
+    @include flex-column;
+    margin: 100px 0.5em 0.5em 0.5em;
+
+    h1 {
+        margin: 8px 8px 0 8px;
+    }
+
+    .formulario-container {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0.5em 0 0.5em 0;
+
+        .formulario {
+            display: flex;
+            gap: 0.5em;
+            padding: 0.5em;
+
+            .formulario-contacto {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+                width: 300px;
+
+                .area-texto {
+                    margin-top: 0.5em;
+                }
+
+                .boton-form {
+                    padding: 5px;
+                    margin: 5px;
+                    transition: .5s;
+                    border-radius: 8px;
+                    width: 80px;
+                }
+            }
+
+            @media (min-width: 500px) {
+                .formulario-contacto {
+                    gap: 4px;
+                    width: 500px;
+                }
+            }
+
+            @media (min-width: 1024px) {
+                .formulario-contacto {
+                    gap: 5px;
+                    width: 700px;
+                }
+            }
+        }
+    }
+
+    .maps {
+        @include flex-row;
+        margin: 0.5em 0 0.5em 0;
+
+        .mapa {
+            width: 95vw;
+        }
+    }
+}
