@@ -1,17 +1,3 @@
-.servicios-img, .nosotros-img{
-    width: $mobile;
-    border: 4px solid $fondo;
-}
-
-.img-destacado {
-    width: $mobile;
-}
-
-.chef-img {
-    width: $mobile;
-    border: 4px solid $fondo;
-}
-
 .menu-grilla {
     img {
         width: 150px;
@@ -24,22 +10,8 @@
 }
 
 @media (min-width: 500px) {
-    .img-destacado {
-        width: $tablet;
-    }
-
-    .chef-img {
-        width: $tablet;
-        border: 6px solid $fondo;
-    }
-
     .menu-grilla img {
         border: 8px solid $fondo3;
-    }
-
-    .servicios-img, .nosotros-img {
-        width: $tablet;
-        border: 6px solid $fondo;
     }
 
     .icono-img {
@@ -48,24 +20,10 @@
 }
 
 @media (min-width: 1024px) {
-    .img-destacado {
-        width: $desktop;
-    }
-
-    .chef-img {
-        width: $desktop;
-        border: 10px solid $fondo;
-    }
-
     .menu-grilla img {
         width: $desktop;
         border: 10px solid $fondo3;
         border-radius: 10px;
-    }
-
-    .servicios-img, .nosotros-img {
-        width: $desktop;
-        border: 10px solid $fondo;
     }
 
     .icono-img {
