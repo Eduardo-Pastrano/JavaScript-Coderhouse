@@ -51,10 +51,14 @@ header {
             }
 
             div {
-                form {
-                    button {
+                .carrito {
+                    .boton-carrito {
                         background-color: $fondo1;
+                        padding: 0.5em;
+                        margin: 0.5em;
                         border-radius: 0.5em;
+                        transition: .5s;
+                        text-align: center;
                     }
                 }
             }
