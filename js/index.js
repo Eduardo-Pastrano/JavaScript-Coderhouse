@@ -1,19 +1,33 @@
 let menu = document.querySelector(".menu-grilla");
 
-let mostrarProductos = () => {
-    localStorage.setItem("productos", JSON.stringify(productos))
-    let listadoProductos = JSON.parse(localStorage.getItem("productos"))
+fetch('./datos.json')
+    .then((response) => response.json())
+    .then((datos) => {
+        datos.forEach((producto) => {
+            let div = document.createElement("div");
+                div.innerHTML = `
+                <h4 class="nombre">${producto.nombre}</h4>
+                <h5 class="precio">$${producto.precio}</h5>
+                <button class="btn btn-success btn-add">Agregar</button>
+                `;
+                document.querySelector(".menu-grilla").appendChild(div);
+        });
+    });
 
-    for (let index = 0; index < listadoProductos.length; index++) {
-        let div = document.createElement("div");
-        div.innerHTML = `
-        <h4 class="nombre">${listadoProductos[index].nombre}</h4>
-        <h5 class="precio">$${listadoProductos[index].precio}</h5>
-        <button class="btn btn-success btn-add">Agregar</button>
-        `;
-        document.querySelector(".menu-grilla").appendChild(div);
-    }
-}
+// let mostrarProductos = () => {
+//     localStorage.setItem("productos", JSON.stringify(productos))
+//     let listadoProductos = JSON.parse(localStorage.getItem("productos"))
+
+//     for (let index = 0; index < listadoProductos.length; index++) {
+//         let div = document.createElement("div");
+//         div.innerHTML = `
+//         <h4 class="nombre">${listadoProductos[index].nombre}</h4>
+//         <h5 class="precio">$${listadoProductos[index].precio}</h5>
+//         <button class="btn btn-success btn-add">Agregar</button>
+//         `;
+//         document.querySelector(".menu-grilla").appendChild(div);
+//     }
+// }
 
 if (localStorage.getItem("productos")) {
     console.log("esta guardado");

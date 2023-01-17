@@ -3,48 +3,48 @@
         "nombre": "Brownies",
         "precio": 5,
         "id": 1,
-        "img": ""
+        "img": "../img/menu/brownies-chocolate.jpg"
     },
     {
         "nombre": "Cheesecake de Chocolate",
         "precio": 6,
         "id": 2,
-        "img": ""
+        "img": "../img/menu/cheesecake-chocolate.jpg"
     },
     {
         "nombre": "Donuts",
         "precio": 3,
         "id": 3,
-        "img": ""
+        "img": "../img/menu/donuts.jpg"
     },
     {
         "nombre": "Macaroons",
         "precio": 8,
         "id": 4,
-        "img": ""
+        "img": "../img/menu/macaroons.jpg"
     },
     {
         "nombre": "Marquesa de Chocolate",
         "precio": 7,
         "id": 5,
-        "img": ""
+        "img": "../img/menu/marquesa-chocolate.jpg"
     },
     {
         "nombre": "Cheesecake de Oreo",
         "precio": 10,
         "id": 6,
-        "img": ""
+        "img": "../img/menu/cheesecake-oreo.jpg"
     },
     {
         "nombre": "Pie de Limón",
         "precio": 5,
         "id": 7,
-        "img": ""
+        "img": "../img/menu/pie-limon.jpg"
     },
     {
         "nombre": "Tiramisú",
         "precio": 10,
         "id": 8,
-        "img": ""
+        "img": "../img/menu/tiramisu.jpg"
     }
 ]
