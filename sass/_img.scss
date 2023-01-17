@@ -5,17 +5,9 @@
     }
 }
 
-.icono-img {
-    width: 32px;
-}
-
 @media (min-width: 500px) {
     .menu-grilla img {
         border: 8px solid $fondo3;
-    }
-
-    .icono-img {
-        width: 50px;
     }
 }
 
@@ -24,9 +16,5 @@
         width: $desktop;
         border: 10px solid $fondo3;
         border-radius: 10px;
-    }
-
-    .icono-img {
-        width: 75px;
     }
 }
