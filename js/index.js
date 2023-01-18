@@ -1,5 +1,27 @@
 const menu = document.querySelector(".menu-grilla");
 
+let userNombre = document.querySelector("#nombre");
+let userCorreo = document.querySelector("#correo");
+let userDireccion = document.querySelector("#direccion");
+
+userNombre.addEventListener("input", function () {
+    if (userNombre.value === "") {
+        console.log("ingrese un nombre valido");
+    }
+});
+
+userCorreo.addEventListener("input", function () {
+    if (userCorreo.value === "") {
+        console.log("ingrese un correo valido");
+    }
+});
+
+userDireccion.addEventListener("input", function () {
+    if (userDireccion.value === "") {
+        console.log("ingrese una dirección valida");
+    }
+});
+
 const solicitarInfo = async () => {
     const response = await fetch('./js/data.json');
     const data = await response.json();
@@ -28,10 +50,10 @@ const solicitarInfo = async () => {
 
     function datosProductos(postre) {
         const informacion = {
-            nombre: postre.querySelector(".nombre-postre").textContent,
-            precio: postre.querySelector(".precio-postre").textContent,
+            id: postre.querySelector(".btn").getAttribute("id"),
             img: postre.querySelector(".img-postre").src,
-            id: postre.querySelector(".btn").getAttribute("id")
+            nombre: postre.querySelector(".nombre-postre").textContent,
+            precio: postre.querySelector(".precio-postre").textContent
         };
     
         carrito=[...carrito, informacion]
@@ -40,6 +62,9 @@ const solicitarInfo = async () => {
 
     const carritoFinal = document.querySelector(".postres-carrito");
     
+    const repetido = carrito.some((productoRepetido) => productoRepetido.id === postre.id );
+    console.log(repetido);
+
     function pintarCarrito() {
         resetPintarCarrito();
 
@@ -64,12 +89,12 @@ const solicitarInfo = async () => {
             document.getElementsByClassName("btn-comprar")[0].addEventListener("click", btnComprar);
             actTotalCarrito();
 
-            let inputCantidad = document.getElementsByClassName("cantidad-carrito-input")
-            for (let i = 0; i < inputCantidad.length; i++) {
-                let input = inputCantidad[i]
-                input.addEventListener("change", cambioCantidad)
-            }
         });
+        let inputCantidad = document.getElementsByClassName("cantidad-carrito-input")
+        for (let i = 0; i < inputCantidad.length; i++) {
+            let input = inputCantidad[i]
+            input.addEventListener("change", cambioCantidad)
+        }
     }
 
     function btnComprar() {
