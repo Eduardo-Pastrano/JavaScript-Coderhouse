@@ -3,6 +3,15 @@
     gap: 0.5em;
     grid-template-columns: 1fr;
     margin: 10px 15px 10px 15px;
+
+    .postres {
+        @include flex-column;
+
+        .nombre-postre {
+            font-size: 16px;
+        }
+    }
+
 }
 
 @media (min-width: 500px) {

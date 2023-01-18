@@ -1,50 +1,50 @@
 [
     {
+        "id": 0,
         "nombre": "Brownies",
         "precio": 5,
-        "id": 1,
         "img": "./img/menu/brownies-chocolate.jpg"
     },
     {
+        "id": 1,
         "nombre": "Cheesecake de Chocolate",
         "precio": 6,
-        "id": 2,
         "img": "./img/menu/cheesecake-chocolate.jpg"
     },
     {
+        "id": 2,
         "nombre": "Donuts",
         "precio": 3,
-        "id": 3,
         "img": "./img/menu/donuts.jpg"
     },
     {
+        "id": 3,
         "nombre": "Macaroons",
         "precio": 8,
-        "id": 4,
         "img": "./img/menu/macaroons.jpg"
     },
     {
+        "id": 4,
         "nombre": "Marquesa de Chocolate",
         "precio": 7,
-        "id": 5,
         "img": "./img/menu/marquesa-chocolate.jpg"
     },
     {
+        "id": 5,
         "nombre": "Cheesecake de Oreo",
         "precio": 10,
-        "id": 6,
         "img": "./img/menu/cheesecake-oreo.jpg"
     },
     {
+        "id": 6,
         "nombre": "Pie de Limón",
         "precio": 5,
-        "id": 7,
         "img": "./img/menu/pie-limon.jpg"
     },
     {
+        "id": 7,
         "nombre": "Tiramisú",
         "precio": 10,
-        "id": 8,
         "img": "./img/menu/tiramisu.jpg"
     }
 ]
