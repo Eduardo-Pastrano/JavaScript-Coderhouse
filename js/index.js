@@ -1,27 +1,5 @@
 const menu = document.querySelector(".menu-grilla");
 
-let userNombre = document.querySelector("#nombre");
-let userCorreo = document.querySelector("#correo");
-let userDireccion = document.querySelector("#direccion");
-
-userNombre.addEventListener("input", function () {
-    if (userNombre.value === "") {
-        console.log("ingrese un nombre valido");
-    }
-});
-
-userCorreo.addEventListener("input", function () {
-    if (userCorreo.value === "") {
-        console.log("ingrese un correo valido");
-    }
-});
-
-userDireccion.addEventListener("input", function () {
-    if (userDireccion.value === "") {
-        console.log("ingrese una dirección valida");
-    }
-});
-
 const solicitarInfo = async () => {
     const response = await fetch('./js/data.json');
     const data = await response.json();
@@ -55,15 +33,12 @@ const solicitarInfo = async () => {
             nombre: postre.querySelector(".nombre-postre").textContent,
             precio: postre.querySelector(".precio-postre").textContent
         };
-    
-        carrito=[...carrito, informacion]
+
+        carrito = [...carrito, informacion]
         pintarCarrito();
     }
 
     const carritoFinal = document.querySelector(".postres-carrito");
-    
-    const repetido = carrito.some((productoRepetido) => productoRepetido.id === postre.id );
-    console.log(repetido);
 
     function pintarCarrito() {
         resetPintarCarrito();
@@ -71,7 +46,7 @@ const solicitarInfo = async () => {
         carrito.forEach((postre) => {
             let divCarrito = document.createElement("div");
             divCarrito.className = "fila-carrito"
-            divCarrito.innerHTML=`
+            divCarrito.innerHTML = `
                 <div class="postre-carrito columna-carrito">
                     <img class="img-postre-carrito" src="${postre.img}">
                     <p class="postre-nombre">${postre.nombre}</p>
@@ -98,10 +73,20 @@ const solicitarInfo = async () => {
     }
 
     function btnComprar() {
-        alert("Gracias por su compra!")
-        let postresCarrito = document.getElementsByClassName("postres-carrito")[0]
-        while (postresCarrito.hasChildNodes()) {
-            postresCarrito.removeChild(postresCarrito.firstChild)
+        let nombreSaludo = localStorage.getItem("nombre")
+        let correoSaludo = localStorage.getItem("correo")
+        if (userNombre.value === "" || userCorreo.value === "") {
+            swal({
+                icon: 'error',
+                title: 'Oops... Algo salio mal!',
+                text: 'Por favor, ingresa tus datos para continuar con la compra.'
+            })
+        } else {
+            swal(`Gracias por tu compra ${nombreSaludo}!`, `Nos comunicaremos al correo: ${correoSaludo}, ingresado previamente para procesar el pago.`, "success");
+            let postresCarrito = document.getElementsByClassName("postres-carrito")[0]
+            while (postresCarrito.hasChildNodes()) {
+                postresCarrito.removeChild(postresCarrito.firstChild)
+            }
         }
         actTotalCarrito();
     }
@@ -131,17 +116,34 @@ const solicitarInfo = async () => {
 
     function eliminarItem(e) {
         if (e.target.classList.contains("btn-danger")) {
-        let postreID = e.target.getAttribute("id");
-        carrito = carrito.filter(
-            (postre) => postre.id !== postreID
-        );
-        pintarCarrito();
-        actTotalCarrito();
+            let postreID = e.target.getAttribute("id");
+            carrito = carrito.filter(
+                (postre) => postre.id !== postreID
+            );
+            pintarCarrito();
+            actTotalCarrito();
         }
     }
 
-    function resetPintarCarrito(){
+    function resetPintarCarrito() {
         carritoFinal.innerHTML = "";
     }
+
+    let userNombre = document.querySelector("#nombre");
+    let userCorreo = document.querySelector("#correo");
+    let userDireccion = document.querySelector("#direccion");
+
+    userNombre.addEventListener("input", function () {
+        localStorage.setItem("nombre", userNombre.value)
+    });
+
+    userCorreo.addEventListener("input", function () {
+        localStorage.setItem("correo", userCorreo.value)
+    });
+
+    userDireccion.addEventListener("input", function () {
+        localStorage.setItem("direccion", userDireccion.value)
+    });
+
 };
 solicitarInfo();
